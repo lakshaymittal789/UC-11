@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lightweight client profile and AI health overview workspace."
+    />
+    <title>Caresmartz — Client Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Caresmartz home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span>caresmartz</span>
+        </a>
+        <div class="topbar-center">
+          <label class="search">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+            </svg>
+            <input type="search" placeholder="Search clients, notes, documents…" />
+            <kbd>⌘ K</kbd>
+          </label>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" aria-label="Notifications">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <button class="user-chip">
+            <span class="avatar avatar-small">JL</span>
+            <span class="user-copy"><strong>Jordan Lee</strong><small>Care coordinator</small></span>
+            <span aria-hidden="true">⌄</span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="#">
+            <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3V10.5Z" /><path d="M9 21v-7h6v7" /></svg>
+            Dashboard
+          </a>
+          <a class="active" href="#">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            Clients
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>
+            Schedule
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 2v6h6M8 13h8M8 17h6" /></svg>
+            Documents
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3" /></svg>
+            Reports
+          </a>
+        </nav>
+        <div class="sidebar-bottom">
+          <a href="#">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.17.37.38.7.6 1 .3.32.7.5 1.1.5h.1v4h-.1a1.7 1.7 0 0 0-1.7.5Z" /></svg>
+            Settings
+          </a>
+          <div class="support-card">
+            <span>Need a hand?</span>
+            <strong>Care team support</strong>
+            <button>Get help</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="breadcrumbs"><a href="#" id="breadcrumb-root">Clients</a><span>/</span><span id="breadcrumb-current">Client profile</span></div>
+
+        <section class="profile-switcher" aria-label="Choose profile type">
+          <button class="active" data-profile-type="client" data-profile-id="client-101">Client</button>
+          <button data-profile-type="caregiver" data-profile-id="caregiver-101">Caregiver</button>
+          <button data-profile-type="facility" data-profile-id="facility-101">Facility</button>
+        </section>
+
+        <section class="profile-hero">
+          <div class="profile-identity">
+            <div class="avatar avatar-large" id="profile-avatar">CM</div>
+            <div>
+              <div class="eyebrow-row">
+                <span class="status" id="profile-status"><i></i>Active client</span>
+                <span class="client-id" id="profile-id-label">ID · client-101</span>
+              </div>
+              <h1 id="profile-name">Clara Morgan</h1>
+              <p id="profile-subtitle">Home care · North District</p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="button button-secondary" id="add-note-button">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              Add note
+            </button>
+            <button class="button button-primary" id="generate-button">
+              <svg viewBox="0 0 24 24"><path d="m12 3 1.3 4.2L17.5 8.5l-4.2 1.3L12 14l-1.3-4.2-4.2-1.3 4.2-1.3L12 3Z" /><path d="m18 14 .8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14Z" /></svg>
+              Generate overview
+            </button>
+            <button class="icon-button bordered" aria-label="More actions">•••</button>
+          </div>
+        </section>
+
+        <nav class="tabs" aria-label="Profile sections">
+          <button class="active" data-tab="summary" id="summary-tab">Profile summary</button>
+          <button data-tab="notes">Notes <span>6</span></button>
+          <button data-tab="documents">Documents <span>14</span></button>
+          <button data-tab="forms">Forms <span>4</span></button>
+        </nav>
+
+        <div class="content-grid">
+          <section class="content-column" id="tab-content">
+            <div class="loading-card">
+              <span class="spinner"></span>
+              <p>Loading profile details…</p>
+            </div>
+          </section>
+
+          <aside class="rail">
+            <section class="rail-card next-visit">
+              <div class="rail-heading">
+                <div>
+                  <span class="section-kicker">UP NEXT</span>
+                  <h2 id="next-card-title">Next visit</h2>
+                </div>
+                <button class="plain-link">View schedule</button>
+              </div>
+              <div class="date-tile"><strong id="next-day">23</strong><span id="next-month">JUN</span></div>
+              <div class="visit-copy">
+                <strong id="next-time">Today, 3:30 PM</strong>
+                <span id="next-description">Personal care visit · 2h</span>
+                <div class="caregiver-line" id="next-meta"><span class="avatar avatar-tiny">CG</span> Caregiver CG-28</div>
+              </div>
+            </section>
+
+            <section class="rail-card">
+              <div class="rail-heading">
+                <div>
+                  <span class="section-kicker">CARE TEAM</span>
+                  <h2 id="team-title">People supporting Clara</h2>
+                </div>
+              </div>
+              <div class="team-list" id="team-list">
+                <div><span class="avatar avatar-small coral">JM</span><p><strong>Jordan Morgan</strong><small>Primary contact · Daughter</small></p><button>•••</button></div>
+                <div><span class="avatar avatar-small mint">CG</span><p><strong>Caregiver CG-28</strong><small>Primary caregiver</small></p><button>•••</button></div>
+                <div><span class="avatar avatar-small blue">JL</span><p><strong>Jordan Lee</strong><small>Care coordinator</small></p><button>•••</button></div>
+              </div>
+            </section>
+
+            <section class="rail-card soft-card">
+              <div class="health-score"><span>82</span><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="16" /><circle class="progress-ring" cx="21" cy="21" r="16" /></svg></div>
+              <div>
+                <span class="section-kicker">PROFILE HEALTH</span>
+                <h2 id="health-title">Looking good</h2>
+                <p id="health-copy">Two details need attention this month.</p>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <div class="scrim" id="scrim"></div>
+    <aside class="overview-drawer" id="overview-drawer" aria-hidden="true">
+      <header class="drawer-header">
+        <div class="ai-title">
+          <span class="ai-icon">✦</span>
+          <div><span>AI-GENERATED OVERVIEW</span><h2 id="drawer-title">Clara’s health overview</h2></div>
+        </div>
+        <button class="icon-button" id="close-drawer" aria-label="Close overview">×</button>
+      </header>
+      <div class="drawer-toolbar">
+        <span id="generated-time">Generating summary…</span>
+        <div>
+          <button class="button button-compact" id="copy-button">Copy text</button>
+          <button class="button button-compact" onclick="window.print()">Export PDF</button>
+        </div>
+      </div>
+      <div class="source-strip"><strong>Sources</strong><span id="source-list">Profile, notes, schedule, care plan</span></div>
+      <div class="drawer-body" id="drawer-body">
+        <div class="drawer-loading"><span class="spinner"></span><p>Reading the latest profile activity…</p></div>
+      </div>
+      <footer class="drawer-footer">AI-generated summary. Verify critical information against the client record.</footer>
+    </aside>
+
+    <div class="modal-backdrop" id="note-modal">
+      <form class="note-modal" id="note-form">
+        <div class="modal-heading"><div><span class="section-kicker">NEW ACTIVITY</span><h2>Add a client note</h2></div><button type="button" class="icon-button" id="close-note">×</button></div>
+        <label>Note type<select id="note-type"><option>Care note</option><option>Family note</option><option>Office note</option></select></label>
+        <label>Details<textarea id="note-content" rows="5" placeholder="What happened during the visit?"></textarea></label>
+        <div class="modal-actions"><button type="button" class="button button-secondary" id="cancel-note">Cancel</button><button class="button button-primary">Save note</button></div>
+      </form>
+    </div>
+
+    <div class="toast" id="toast">Copied to clipboard</div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
